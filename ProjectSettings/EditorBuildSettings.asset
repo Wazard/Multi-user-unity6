@@ -1,0 +1,14 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Multi_User_Collaboration_2024.unity
+    guid: b63b9acf6c41ab845aed9c7f74d115f3
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: b3689e9ea08ecf849a364d0d8e193311, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 01e00ff35666b4848a19c6052f54ea66, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: bb280338f2957c4428b152b2eaf0ffa7, type: 2}

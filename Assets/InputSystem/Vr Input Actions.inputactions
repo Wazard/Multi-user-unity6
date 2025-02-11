@@ -1,0 +1,56 @@
+{
+    "name": "Vr Input Actions",
+    "maps": [
+        {
+            "name": "Menu",
+            "id": "c2045844-24c6-478d-a2ac-3a53b30325e5",
+            "actions": [
+                {
+                    "name": "Menu",
+                    "type": "Button",
+                    "id": "42355731-87de-489d-a950-b06048a54bcb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8d2fc2ad-0458-46db-83ed-044730c932ed",
+                    "path": "<ViveController>/menu",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9a5ebdeb-adfb-435b-91a5-bf45b7b863fc",
+                    "path": "<OculusTouchController>/menu",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6e8a51b1-5915-4e7a-b521-ba8007ea9726",
+                    "path": "<XRController>/{MenuButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
