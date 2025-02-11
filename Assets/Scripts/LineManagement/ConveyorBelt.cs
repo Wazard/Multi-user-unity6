@@ -9,13 +9,12 @@ using ExitGames.Client.Photon;
 [SelectionBase]
 public class ConveyorBelt : MonoBehaviour
 {
-
     //#region PHOTON_EVENTS
     //public const byte BELT_TOGGLE_EVENT = 4;
     //public const byte OBJECT_DESTRUCTION = 3;
     //#endregion
     [Header("ObjectMovement")]
-    [SerializeField] public float m_BeltSpeed;
+    public static float m_BeltSpeed = .01f;
     [SerializeField] public bool m_BeltIsActive;
     //The parts to be assembled : elica, sostegno etc
     [SerializeField] private List<GameObject> m_ObjectsOnTheBelt = new List<GameObject>();
@@ -172,6 +171,8 @@ public class ConveyorBelt : MonoBehaviour
         float project_length = Mathf.Clamp(Vector3.Dot(point - line_start, line_direction), 0f, line_length);
         return line_start + line_direction * project_length;
     }
+
+    /*
     public void IncreaseSpeed()
     {
         m_BeltSpeed = (float)(m_BeltSpeed + 0.001);
@@ -180,5 +181,5 @@ public class ConveyorBelt : MonoBehaviour
     {
         m_BeltSpeed = (float)(m_BeltSpeed - 0.001);
     }
-
+    */
 }

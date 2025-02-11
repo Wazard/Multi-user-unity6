@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "multy_user_collaboration_2024.sln"
+    "dotnet.defaultSolution": "Multi-user-unity6.sln"
 }

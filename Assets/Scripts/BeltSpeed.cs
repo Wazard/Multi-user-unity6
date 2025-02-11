@@ -7,22 +7,22 @@ public class BeltSpeed : MonoBehaviour
 {
     [Header("Buttons"), Space(5)]
     [SerializeField] private Button increaseSpeedButton;
-    [SerializeField] private Button decreaseSpeedButton;
+    [SerializeField] private Button reduceSpeedButton;
 
     [Space(10), Header("Conveyor belt settings"), Space(5)]
     public GameObject ConveyorSpeed;
     public GameObject parentObject;
-    public double speed = 0.1;
+    public float beltSpeedOffset = .01f;
 
     [Space(10), Header("UI"), Space(5)]
     public TMP_Text speedText;
-    public Action<double> onBeltSpeedChanged;
     
     // Start is called before the first frame update
     void Start()
     {
-        
-        speedText.text = "Speed: " + speed;
+        speedText.text = "Speed: " + ConveyorBelt.m_BeltSpeed;
+        increaseSpeedButton.onClick.AddListener(increaseVelocity);
+        reduceSpeedButton.onClick.AddListener(reduceVelocity);
     }
 
     // Update is called once per frame
@@ -32,26 +32,27 @@ public class BeltSpeed : MonoBehaviour
         
 
     if(Input.GetKeyDown(KeyCode.P))
-            {
-            IncreaseSpeedText();
-            }
+        {
+            increaseVelocity();
+        }
         if (Input.GetKeyDown(KeyCode.O))
-            {
-            DecreaseSpeedText();
-            }
+        {
+            reduceVelocity();
+        }
     }
 
-    private void DecreaseSpeedText()
-    {
-        speed -=  0.01;
-        speedText.text = "Speed: " + speed;
-        Debug.Log("Velocità diminuita a: " + speed );
+    private void reduceVelocity(){
+        ConveyorBelt.m_BeltSpeed -= beltSpeedOffset;
+        UpdateText();
+    }    
+    private void increaseVelocity(){
+        ConveyorBelt.m_BeltSpeed += beltSpeedOffset;
+        UpdateText();
     }
-    private void IncreaseSpeedText()
+    private void UpdateText()
     {
-        speed += 0.01;
-        speedText.text = "Speed: " + speed;
-        Debug.Log("Velocità aumentata a: " + speed);
+        speedText.text = $"Speed: {ConveyorBelt.m_BeltSpeed:0.00}";
+        Debug.Log("belt speed set to: " + ConveyorBelt.m_BeltSpeed.ToString("0.00") );
     }
 
 
